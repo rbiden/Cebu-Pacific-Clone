@@ -1,0 +1,8 @@
+@import "./variables";
+
+@mixin flex($orientation, $align, $justify) {
+    display: flex;
+    align-items: $align;
+    flex-direction: $orientation;
+    justify-content: $justify;
+}

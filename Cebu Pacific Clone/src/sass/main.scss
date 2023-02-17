@@ -1,0 +1,263 @@
+@import "./customs";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Source Sans Pro",sans-serif;
+    background-color: $primary;
+}
+
+#bg-photo {
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    z-index: -1;
+}
+
+aside {
+    ul {
+        @include flex(column, center, center);
+        position: absolute;
+        left: 2%;
+        top: 30%;
+        gap: 2.5rem;
+
+        li {
+            a {
+                color: $primary;
+            }
+        }
+    }
+}
+
+header {
+    background: linear-gradient(180deg,#232629 -35%,rgba(255,255,255,0) 95%);
+
+    .top-header {
+        @include flex(row, center, space-evenly);
+        border-bottom: solid 1px rgba($color: rgb(170, 169, 169), $alpha: 0.5);
+        padding-block: 10px;
+        
+        .advisory {
+            @include flex(row, center, center);
+            gap: 2rem;
+    
+            .advisory-items {
+                p {
+                    @include flex(row, center, center);
+                    font-size: 0.75rem;
+                    color: $primary;
+                    gap: 0.5rem;
+                }
+                .item-2 {
+                    display: none;
+                }
+            }
+            .button-group {
+                @include flex(row, center, center);
+                gap: 1rem;
+    
+                a {
+                    font-size: 0.8rem;
+    
+                    i {
+    
+                    }
+                }
+            }
+        }
+        .preferences {
+            ul {
+                @include flex(row, center, center);
+                gap: 2rem;
+    
+                li {
+                    @include flex(row, center, center);
+                    font-size: 0.8rem;
+                    text-decoration: none;
+                    color: white;
+                    gap: 0.8rem;
+                }
+            }
+        }
+    }
+    .bottom-header {
+        @include flex(row, center, space-evenly);
+        padding-inline: 15rem;
+        z-index: 4;
+
+        .nav-items {
+            ul {
+                @include flex(row, center, center);
+                gap: 3rem;
+
+                li {
+                    a {
+                        font-size: 1rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        .nav-addons {
+            @include flex(row, center, center);
+            gap: 2rem;
+
+            a {
+                font-size: 1rem;
+                font-weight: bold;
+
+                i {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+}
+
+main {
+    @include flex(column, center, center);
+    height: 80vh;
+
+    h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 4rem;
+        letter-spacing: 1rem;
+        text-shadow: 0 8px 18px rgb(0 0 0 / 60%);;
+        color: $primary;
+    }
+    
+    section {
+        @include flex(row, center, center);
+        position: relative;
+        padding: 1.5rem;
+        margin-top: 8rem;
+        border-radius: 0.7rem;
+
+        span {
+            color: transparent;
+            background: rgba(190,190,190,.7);
+            -webkit-backdrop-filter: blur(8px);
+            position: absolute;
+            backdrop-filter: blur(8px);
+            border-radius: 8px;
+            opacity: 0.7;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .flight {
+            h3 {
+                @include flex(row, center, start);
+                gap: 0.5rem;
+                font-size: 16px;
+                color: $primary;
+                margin-bottom: 0.7rem;
+            }
+            .input-group {
+                @include flex(row, center, center);
+
+                .first-group {
+                    z-index: 3;
+                }
+                i {
+                    position: absolute;
+                    padding: 0.7rem 0.5rem;
+                    transform: translateX(0);
+                    border-radius: 50%;
+                    background-color: white;
+                    z-index: 4;
+                    border: solid 1px rgb(141, 140, 140);
+                }
+                .second-group {
+                    transform: translateX(-5%);
+                    z-index: 2;
+
+                    input {
+                        padding-left: 2.5rem;
+                    }
+
+                    label {
+                        left: 20%;
+                    }
+                }
+            }
+        }
+        .round-trip {
+            a {
+                @include flex(row, center, start);
+                gap: 0.5rem;
+                font-size: 14px;
+                color: $primary;
+                margin-bottom: 0.7rem;
+            }
+            a:hover ~ .trip-type {
+                display: block;
+                z-index: 5;
+            }
+            .trip-type {
+                display: none;
+                margin-top: -0.2rem;
+                box-shadow: 5px 0px 10px -2px rgba($color: #000000, $alpha: 0.2);
+                position: absolute;
+                background-color: white;
+                border-radius: 0.5rem;
+                padding: 0.8rem 0 0.2rem 1rem;
+                width: 105px;
+                transition: all 0.2s;
+
+                li {
+                    width: 100%;
+
+                    a {
+                        color: rgb(39, 38, 38);
+                    }
+                }
+                
+            }
+            .input-group {
+                @include flex(row, center, center);
+
+                .first-group {
+                    z-index: 3;
+                }
+                .second-group {
+                    transform: translateX(-5%);
+                    z-index: 2;
+
+                    input {
+                        padding-left: 1.8rem;
+                    }
+
+                    label {
+                        left: 15%;
+                    }
+                }
+            }
+        }
+        button {
+            background: $gradient;
+            color: $primary;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            padding: 1rem 3rem;
+            border-radius: 0.5em;
+            border: 0;
+            cursor: pointer;
+
+            &:active {
+                scale: 0.99;
+            }
+        }
+    }
+}

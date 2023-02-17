@@ -1,0 +1,32 @@
+@import "./components";
+
+.floating-group {
+    position: relative;
+
+    input {
+        padding: 2rem 1rem 0.7rem;
+        border: solid 0.1px rgb(228, 222, 222);
+        font-size: 0.96rem;
+        width: 200px;
+        border-radius: 0.3rem;
+        font-weight: 500;
+    }
+
+    input:focus {
+        outline: 0;
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgb(180, 177, 177);
+        font-size: 0.9rem;
+    }
+
+    label {
+        position: absolute;
+        color: rgb(110, 108, 108);
+        top: 0.7rem;
+        left: 1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+}
